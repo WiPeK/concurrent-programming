@@ -1,0 +1,324 @@
+Politechnika Œwiêtokrzyska w Kielcach
+Wydzia³ Elektrotechniki, Automatyki i InformatykiLaboratorium: Programowanie Wspó³bie¿nePodstawy systemu LinuxAutor: Krzysztof Adamczyk
+Grupa: 3ID13ANumer laboratorium: 1Data wykonania: 16.10.2017
+1. Wybrane komendy w systemie linux
+apt-get 		Zarz¹dzanie pakietami
+basename		Wyœwietl nazwê pliku
+cd			Zmiana katalogu
+cp			Kopiowanie plików i katalogów
+clear		Czyszczenie okna termianala
+csplit		Rozdziel plik na kawa³ki
+cron 		Regularne uruchamianie programów
+chmod		Zmieñ prawa dostêpu do pliku
+chown 		Zmieñ w³aœciciela i grupê pliku
+chgrp 		Zmieñ grupê pliku
+cat			Po³¹cz pliki i wyœwietl zawartoœæ na standardowe wyjœcie
+dpkg 		Instalowanie oprogramowania za pomoc¹ menad¿era pakietów
+dirname 		Wyœwietl nazwê katalogu
+df			Wyœwietl informacje o dostêpnej przestrzeni dyskowej
+du			Ustal ile miejsca na dysku zajmuje plik
+echo		Wyœwietlanie tekstu ze standardowego wejœcia na standardowe wyjœcie
+env 		Uruchomienie programu ze zmienionym œrodowiskiem
+grep 		Wyœwietlanie tekstu pasuj¹cego do wzorca
+groups		Wyœwietlanie grup do których nale¿y u¿ytkownik
+head		Wyœwietl pocz¹tkow¹ czêœæ pliku
+hostid		Wyœwietlanie numerycznego indentyfikatora hosta
+hostname		Wyœwietlanie lub ustawienie nazwy hosta
+install 		Kopiuj plik i ustaw atrybuty
+kill 			Wys³anie sygna³u (zakoñczenia) do procesu
+killall 		Zakoñczenie wszystkich procesów o podanej nazwie
+ls			Wyœwietl zawartoœæ folderu
+link 		Utwórz twarde dowi¹zanie (skrót)
+ln 			Utwórz dowi¹zanie (skrót)
+mv			Przenieœ (zmieñ nazwê) plik lub katalog
+mkdir		Utwórz katalog
+mkfifo 		Utwórz FIFO
+man		Wyœwietlanie pomocy za poœrednictwem elektronicznego podrêcznika
+mknod 		Utwórz blok lub znak specjalny plików
+nl			Wyœwietl zawartoœæ pliku wraz z ponumerowanymi wierszami
+ps 			Wyœwietlanie informacji o wszystkich procesach
+passwd		Zmiana has³a
+printf 		Sformatuj i wyœwietl tekst
+pwd		Wyœwietlanie bie¿¹cego katalogu
+rm			Usuñ plik lub katalog
+rmdir		Usuñ pusty katalog
+reboot 		Restart systemu
+readlink 		Wyœwietl na co wskazuje dowi¹zanie
+read 		Pobieranie tekstu ze standardowego wejœcia
+split		Rozdziel plik na kawa³ki
+sudo 		Uruchomienie programu z uprawnieniami administratora
+su			Logowanie na konto innego u¿ytkownika
+stat		Wyœwietl status pliku lub systemu plików
+tail			Wyœwietl koñcow¹ czêœæ pliku
+truncate 		Zmniejsz lub zwiêksz rozmiar pliku
+timeout 		Uruchomienie programu z limitem czasowym
+top 		Wyœwietlanie informacji o najwa¿niejszych procesach
+touch 		Zmieñ datê ostatniej modyfikacji, lub utwórz nowy plik
+users		Wyœwietlalnie nazwy u¿ytkowników aktualnie zalogowanych
+unlink 		Usuñ dowi¹zanie
+uptime		Wyœwietlanie informacji o tym jak d³ugo system jest w³¹czony
+useradd		Dodawanie konta u¿ytkownika
+umask		Maskowanie uprawnieñ
+uname		Wyœwietlanie informacji systemowych
+userdel 		Usuwanie konta u¿ytkownika
+wc			Wyœwietl now¹ liniê, s³owo i iloœæ bajtów dla ka¿dego pliku
+watch		Monitorowanie wyniku polecenia
+
+2. Wybrane komendy w edytorze VIM
+- rozpoczêcie pisania: a,i,A,I,o,O
+- koñczenie pisania: ESC
+- poruszanie siê: strza³ki, h,j,k,l,pgup,pgdwn,n,N,``,ma ~a
+- kasowanie: x, d, D
+- kopiowanie: y
+- wklejanie: p,P
+- szukanie: strza³ki, h,j,k,l,pgup,pgdwn,n,N,``,ma ~a
+- zamienianie: cw, r
+- wychodzenie: q, q!, wq
+- ustawienia: :set {param}
+
+3. Zadania do samodzielnego wykonania
+Zadanie 3
+Wykonujemy polecenia:
+cp /etc/skel/.bashrc .bashrc
+cp /etc/skel/.profile . profile
+Nastêpnie otwieramy plik .bashrc w edytorze vim
+vim .bashrc
+Wpisujemy w pliku
+export BLABLA = "ala ma kota" – tworzymy zmienn¹
+i wypisujemy j¹ za pomoc¹
+echo $BLABLA
+wynikiem bêdzie wypisanie ci¹gu "ala ma kota"
+
+~$ cp /etc/skel/.bashrc .bashrc
+~$ cp /etc/skel/.profile .profile
+~$ vim .bashrc
+export BLABLA = "ala ma kota"
+~$ echo $BLABLA
+ala ma kota
+
+Zadanie 4
+~$ mkdir A && mkdir B && cd A
+~$ mkdir AA && mkdir BB && cd AA
+~$ mkdir AAA && mkdir BBB
+~$ cd ../../B
+~$ mkdir CC && cd
+~$ cd A/AA/BBB
+~$ cd pwd
+~$ cd ../../../B/CC
+~$ cd ../ && rmdir CC && cd ../
+~$ rm –rf A && rm –rf B
+
+Zadanie 6
+~$ ls > plik.txt
+~$ more plik.txt
+Dokumenty
+Muzyka
+Obrazy
+Pobrane
+Plik.txt
+…
+
+Rozmiar pliku 122 bajty
+
+~$ ls >> plik.txt
+~$ cat plik.txt
+
+Rozmiar pliku 244 bajty
+
+Rozmiar pliku z podwójnym przekierowanie wynika z tego ¿e polecenie dopisuje do pliku a go nie czyœci w porównaniu do pojedynczego przekierowania
+
+
+
+
+Zadanie 10
+
+#include <stdio.h>
+
+Int main() {
+	puts(”Hello world”);
+   return 0;
+}
+
+Kompilacja:
+gcc zad10.c –o program10
+
+Wykonanie:
+./program10
+
+Wynik:
+Hello world
+
+Zadanie 11
+
+#include <stdio.h>
+#include <string.h>
+
+	  int main(int argc, char **argv){
+		int i;
+		for(i = argc - 1; i >= 0; i--) {
+			printf("%s\n", argv[i]);
+		}
+		return 0;
+}
+
+~$ vim zad11.c
+~$ gcc zad11.c  -o program11
+~$ ./program11 ala ma kota a kot ma ale
+ale
+ma
+kot
+a
+kota
+ma
+ala
+Zadanie 12
+
+#include <stdio.h>
+	#include <stdlib.h>
+
+	int main(int argc, char *argv[], char *envp[]){
+		int ii;
+		for(ii = 0; envp[ii] != (char*)0; ii++) {
+			printf("%s\n", envp[ii]);	
+		}
+		return 0;
+}
+
+~$ vim zad12.c
+~$ gcc zad12.c –o program12
+~$ ./program12
+
+XDG_VTNR=7
+XDG_SESSION_ID=c2
+CLUTTER_IM_MODULE=xim
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/krzysztof
+SESSION=ubuntu
+GPG_AGENT_INFO=/home/krzysztof/.gnupg/S.gpg-agent:0:1
+TERM=xterm-256color
+SHELL=/bin/bash
+XDG_MENU_PREFIX=gnome-
+VTE_VERSION=4205
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+WINDOWID=48234506
+UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1700
+GNOME_KEYRING_CONTROL=
+GTK_MODULES=gail:atk-bridge:unity-gtk-module
+USER=krzysztof
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+QT_ACCESSIBILITY=1
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SESSION_MANAGER=local/krzysztof-VirtualBox:@/tmp/.ICE-unix/2024,unix/krzysztof-VirtualBox:/tmp/.ICE-unix/2024
+DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+DESKTOP_SESSION=ubuntu
+QT_IM_MODULE=ibus
+QT_QPA_PLATFORMTHEME=appmenu-qt5
+XDG_SESSION_TYPE=x11
+JOB=dbus
+PWD=/home/krzysztof/pw/lab1
+XMODIFIERS=@im=ibus
+GNOME_KEYRING_PID=
+LANG=pl_PL.UTF-8
+GDM_LANG=pl
+MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+IM_CONFIG_PHASE=1
+COMPIZ_CONFIG_PROFILE=ubuntu
+GDMSESSION=ubuntu
+SESSIONTYPE=gnome-session
+GTK2_MODULES=overlay-scrollbar
+XDG_SEAT=seat0
+HOME=/home/krzysztof
+SHLVL=1
+LANGUAGE=pl
+LIBGL_ALWAYS_SOFTWARE=1
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+XDG_SESSION_DESKTOP=ubuntu
+LOGNAME=krzysztof
+QT4_IM_MODULE=xim
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ymIRfrrPXs
+LESSOPEN=| /usr/bin/lesspipe %s
+INSTANCE=
+XDG_RUNTIME_DIR=/run/user/1000
+DISPLAY=:0
+XDG_CURRENT_DESKTOP=Unity
+GTK_IM_MODULE=ibus
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XAUTHORITY=/home/krzysztof/.Xauthority
+OLDPWD=/home/krzysztof
+_=./program12
+
+
+
+
+
+
+
+
+
+
+
+
+Zadanie 13
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+
+	   int main(){
+		printf("Pid: %d\n ", getpid());
+		printf("Pid rodzica: %d\n, getppid());
+		setpgrp();
+		printf("Getpgrp wynik: %d\n, getpgrp());
+		return 0;
+    }
+
+~$ vim zad13.c
+~$ gcc zad13.c –o program13
+~$ ./program13
+Pid: 24132
+Pid rodzica: 23475
+Getpgrp wynik: 24132
+
+Funkcja getpgrp() pobiera numer grupy procesów
+Funkcja setpgrp() zmienia numer grupy procesów
+
+            
+
+
+
+
+
+
+     Zadanie 14
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+
+	   int main(){
+		printf("Id uzytkownika: %d\n ", getuid());
+		printf("Id grupy: %d\n ", getgid());
+		printf("Efektywny Id uzytkownika: %d\n ", geteuid());
+		printf("Efektywny Id grupy: %d\n ", getegid());
+
+		return 0;
+    	      }
+~$ vim zad14.c
+~$ gcc zad14.c –o program14
+~$ ./program14
+Id uzytkownika: 1000
+Id grupy: 1000
+Efektywny Id uzytkownika: 1000
+Efektywny Id grupy: 1000
+     
+     
+     Wnioski
+	Dziêki wykonaniu laboratorium przypomniane zosta³y podstawowe komendy jak i 	zaznajomione zupe³nie nowe konsoli linuxa i obs³ugi edytora vim.
+Kompilacja programów zosta³a przeprowadzona za pomoc¹ kompilatora gcc z poziomu konsoli.
+Zadanie 15 nie zosta³o dokoñczone z powodu braku czasu na odpowiednie sformatowanie wyœwietlanych danych.	
