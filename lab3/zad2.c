@@ -10,7 +10,9 @@ int childPipe[2], parentPipe[2];
 int childpid;
 
 void openPipe(int pipeDescriptor[2]) {
-    pipe(pipeDescriptor);
+    if(pipe(pipeDescriptor)) {
+		perror("Pipe error\n");
+    }
 }
 
 void blockPipe(int childValue, int parentValue) {
@@ -29,7 +31,7 @@ int main(){
    		 blockPipe(1,0);
 
    		 read(childPipe[0], childBufor, sizeof(childBufor));
-
+		 printf("Client file name: %s\n", childBufor);
    		 FILE * file = fopen(childBufor, "r");
 
    		 if(file != NULL){
@@ -46,11 +48,11 @@ int main(){
    		 blockPipe(0,1);
    		 printf("Type file name: ");   	 
    		 scanf("%s", fileName);
-
-   		 write(childPipe[1], fileName, sizeof(fileName));
+		 printf("File name: %s\n", fileName);
+   		 write(childPipe[1], fileName, strlen(fileName)+1);
 
    		 while(read(parentPipe[0], parentBufor, sizeof(parentBufor)) > 0) {
-               			 write(1, parentBufor, strlen(parentBufor));
+               			 write(1, parentBufor, strlen(parentBufor)+1);
    		 }
 
    		 wait(NULL);
